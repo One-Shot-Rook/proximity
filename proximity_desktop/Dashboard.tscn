@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
-[sub_resource type="BitmapFont" id=1]
+[ext_resource path="res://Assets/Fonts/FjallaOne-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Dashboard.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+font_data = ExtResource( 1 )
 
 [node name="Dashboard" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -16,17 +22,81 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
-anchor_right = 1.0
-anchor_bottom = 0.1
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Label" type="Label" parent="Panel/HBoxContainer"]
-margin_bottom = 108.0
+[node name="Label" type="Label" parent="Panel"]
+margin_left = 20.0
+margin_top = 20.0
 size_flags_horizontal = 5
 size_flags_vertical = 7
 custom_fonts/font = SubResource( 1 )
 text = "Proximity"
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TopBar" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.4
+anchor_right = 1.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 80 )
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/TopBar"]
+margin_left = 516.0
+margin_right = 636.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+text = "order"
+
+[node name="Button2" type="Button" parent="Panel/TopBar"]
+margin_left = 640.0
+margin_right = 760.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+text = "test2"
+
+[node name="Button3" type="Button" parent="Panel/TopBar"]
+margin_left = 764.0
+margin_right = 884.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+text = "test3"
+
+[node name="Button4" type="Button" parent="Panel/TopBar"]
+margin_left = 888.0
+margin_right = 1008.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+text = "test4"
+
+[node name="Button5" type="Button" parent="Panel/TopBar"]
+margin_left = 1012.0
+margin_right = 1132.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 120, 0 )
+text = "test5"
+
+[node name="HSeparator" type="HSeparator" parent="Panel"]
+anchor_right = 1.0
+margin_top = 100.0
+margin_bottom = 104.0
+
+[node name="MainView" type="HBoxContainer" parent="Panel"]
+anchor_left = 0.1
+anchor_top = 0.15
+anchor_right = 0.9
+anchor_bottom = 0.9
+margin_right = 40.0
+margin_bottom = 40.0
+custom_constants/separation = 60
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Panel/TopBar/Button" to="." method="_on_Button_pressed"]
