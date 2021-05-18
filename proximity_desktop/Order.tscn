@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/resources/order_panel.tres" type="StyleBox" id=1]
+[ext_resource path="res://Assets/Fonts/FjallaOne-Regular.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Order.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 22
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=2]
+font_data = ExtResource( 2 )
+
+[node name="Order" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1620.0
+margin_bottom = -903.0
+rect_min_size = Vector2( 300, 120 )
+custom_styles/panel = ExtResource( 1 )
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="table" type="Label" parent="."]
+anchor_right = 0.7
+margin_left = 10.0
+margin_top = 5.0
+margin_right = -5.0
+rect_min_size = Vector2( 60, 30 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Table number"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="timestamp" type="Label" parent="."]
+anchor_left = 0.7
+anchor_right = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -10.0
+rect_min_size = Vector2( 60, 30 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "00:00"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="."]
+anchor_right = 1.0
+margin_left = 2.0
+margin_top = 40.0
+margin_right = -2.0
+margin_bottom = 44.0
+
+[node name="VSeparator" type="VSeparator" parent="."]
+margin_left = 200.0
+margin_top = 2.0
+margin_right = 204.0
+margin_bottom = 42.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="order_contents" type="Label" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 50.0
+margin_right = -10.0
+margin_bottom = -91.0
+rect_min_size = Vector2( 280, 60 )
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Coke:
+- no ice
+- lemon
+Steak:
+- medium rare"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="resized" from="order_contents" to="." method="_on_order_contents_resized"]
