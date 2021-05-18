@@ -1,0 +1,145 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://styles/circle_pressed.tres" type="StyleBox" id=1]
+[ext_resource path="res://font_item.tres" type="DynamicFont" id=2]
+[ext_resource path="res://theme_main.tres" type="Theme" id=3]
+[ext_resource path="res://styles/circle_normal.tres" type="StyleBox" id=4]
+[ext_resource path="res://styles/circle_disabled.tres" type="StyleBox" id=5]
+[ext_resource path="res://styles/circle_highlight.tres" type="StyleBox" id=6]
+[ext_resource path="res://Item.gd" type="Script" id=7]
+[ext_resource path="res://styles/circle_red.tres" type="StyleBox" id=8]
+
+[node name="Item" type="Control"]
+margin_right = 1080.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 0, 200 )
+theme = ExtResource( 3 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+item_name = "Coke"
+item_price = 0.0
+
+[node name="Background" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+color = Color( 0.866667, 0.866667, 0.866667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBox" type="HBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Name" type="Label" parent="HBox"]
+margin_right = 345.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Coke"
+align = 1
+valign = 1
+
+[node name="VSeparator" type="VSeparator" parent="HBox"]
+margin_left = 349.0
+margin_right = 353.0
+margin_bottom = 180.0
+
+[node name="Price" type="Label" parent="HBox"]
+margin_left = 357.0
+margin_right = 702.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color = Color( 0.458824, 0.458824, 0.458824, 1 )
+text = "£0"
+align = 1
+valign = 1
+
+[node name="VSeparator2" type="VSeparator" parent="HBox"]
+margin_left = 706.0
+margin_right = 710.0
+margin_bottom = 180.0
+
+[node name="Center" type="HBoxContainer" parent="HBox"]
+margin_left = 714.0
+margin_right = 1060.0
+margin_bottom = 180.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Minus" type="AspectRatioContainer" parent="HBox/Center"]
+margin_top = 49.0
+margin_right = 112.0
+margin_bottom = 130.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="HBox/Center/Minus"]
+margin_left = 15.5
+margin_right = 96.5
+margin_bottom = 81.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 8 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 8 )
+disabled = true
+enabled_focus_mode = 0
+text = "-"
+
+[node name="Amount" type="Label" parent="HBox/Center"]
+margin_left = 116.0
+margin_top = 49.0
+margin_right = 229.0
+margin_bottom = 130.0
+size_flags_horizontal = 3
+text = "0"
+align = 1
+valign = 1
+
+[node name="Plus" type="AspectRatioContainer" parent="HBox/Center"]
+margin_left = 233.0
+margin_top = 49.0
+margin_right = 346.0
+margin_bottom = 130.0
+size_flags_horizontal = 7
+size_flags_vertical = 4
+stretch_mode = 1
+
+[node name="Button" type="Button" parent="HBox/Center/Plus"]
+margin_left = 16.0
+margin_right = 97.0
+margin_bottom = 81.0
+focus_mode = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/hover = ExtResource( 6 )
+custom_styles/pressed = ExtResource( 1 )
+custom_styles/disabled = ExtResource( 5 )
+custom_styles/normal = ExtResource( 4 )
+enabled_focus_mode = 0
+text = "+"
+
+[connection signal="pressed" from="HBox/Center/Minus/Button" to="." method="_on_item_amount_appended" binds= [ -1 ]]
+[connection signal="pressed" from="HBox/Center/Plus/Button" to="." method="_on_item_amount_appended" binds= [ 1 ]]
