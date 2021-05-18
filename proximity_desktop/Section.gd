@@ -1,16 +1,10 @@
 extends Panel
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
 var rng = RandomNumberGenerator.new()
 
 var load_order = preload("res://Order.tscn")
 
 var title:String = "placeholder" setget set_title, get_title
-
-
 
 func set_title(value) -> bool:
 	if typeof(value) != TYPE_STRING:
@@ -27,8 +21,11 @@ func _ready():
 	rng.randomize()
 
 func spawn_order():
-	var order
-	order = load_order.instance()
+	var order = load_order.instance()
 	order.initialize("test" + String(rng.randi_range(1,100)),"Coke:\n- no ice\n- lemon\nSteak:\n- medium rare")
 	$scrollC/vbox.add_child(order)
 
+func order_received(content):
+	var order = load_order.instance()
+	order.initialize("test" + String(rng.randi_range(1,100)),content)
+	$scrollC/vbox.add_child(order)

@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Server.gd" type="Script" id=1]
+
+[node name="Server" type="Control"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color( 1, 1, 1, 0.588235 )
+margin_right = 900.0
+margin_bottom = 300.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 45.0
+margin_right = 895.0
+margin_bottom = 295.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="labelUserCount" type="Label" parent="."]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 895.0
+margin_bottom = 45.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

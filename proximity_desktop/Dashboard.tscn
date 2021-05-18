@@ -53,19 +53,19 @@ margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
 text = "order"
 
-[node name="Button2" type="Button" parent="Panel/TopBar"]
+[node name="showServer" type="Button" parent="Panel/TopBar"]
 margin_left = 640.0
 margin_right = 760.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
-text = "test2"
+text = "show Server"
 
-[node name="Button3" type="Button" parent="Panel/TopBar"]
+[node name="clearLogs" type="Button" parent="Panel/TopBar"]
 margin_left = 764.0
 margin_right = 884.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 120, 0 )
-text = "test3"
+text = "clear logs"
 
 [node name="Button4" type="Button" parent="Panel/TopBar"]
 margin_left = 888.0
@@ -100,3 +100,5 @@ __meta__ = {
 }
 
 [connection signal="pressed" from="Panel/TopBar/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Panel/TopBar/showServer" to="." method="_on_showServer_pressed"]
+[connection signal="pressed" from="Panel/TopBar/clearLogs" to="." method="_on_clearLogs_pressed"]
