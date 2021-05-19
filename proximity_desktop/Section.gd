@@ -26,6 +26,8 @@ func spawn_order():
 	$scrollC/vbox.add_child(order)
 
 func order_received(content):
+	if content.empty():
+		return
 	var order = load_order.instance()
 	order.initialize("test" + String(rng.randi_range(1,100)),content)
 	$scrollC/vbox.add_child(order)

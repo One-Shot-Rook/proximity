@@ -1,9 +1,9 @@
 extends Control
 
 signal test_order
-signal drinks_order(content)
-signal food_order(content)
-signal misc_order(content)
+signal DRINK_order(content)
+signal FOOD_order(content)
+signal MISC_order(content)
 
 var load_server = preload("res://Server.tscn")
 var load_section = preload("res://Section.tscn")
@@ -15,9 +15,9 @@ func _ready():
 	initialize_mainview()
 	initialize_server()
 	connect("test_order",get_node("Panel/MainView/Drinks"),"spawn_order")
-	connect("drinks_order",get_node("Panel/MainView/Drinks"),"order_received")
-	connect("food_order",get_node("Panel/MainView/Food"),"order_received")
-	connect("misc_order",get_node("Panel/MainView/Misc"),"order_received")
+	connect("DRINK_order",get_node("Panel/MainView/Drinks"),"order_received")
+	connect("FOOD_order",get_node("Panel/MainView/Food"),"order_received")
+	connect("MISC_order",get_node("Panel/MainView/Misc"),"order_received")
 
 
 func initialize_mainview():
@@ -36,14 +36,17 @@ func initialize_server():
 	add_child(server)
 	server.rect_position = Vector2(0,700)
 
-func incoming_order(type, content):
-	match type:
-		"d":
-			emit_signal("drinks_order",content)
-		"f":
-			emit_signal("food_order",content)
-		"m":
-			emit_signal("misc_order",content)
+func incoming_order(order):
+	for category in order.keys():
+		emit_signal(category + "_order", order[category])
+	
+#	match type:
+#		"d":
+#			emit_signal("DRINK_order",content)
+#		"f":
+#			emit_signal("FOOD_order",content)
+#		"m":
+#			emit_signal("MISC_order",content)
 
 func _on_Button_pressed():
 	emit_signal("test_order")

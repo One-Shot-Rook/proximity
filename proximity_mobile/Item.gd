@@ -1,9 +1,13 @@
 tool
 extends Control
 
-var item_name = "" setget set_item_name
-var item_amount = 0 setget set_item_amount
+var item_name = "" setget set_item_name, get_item_name
+var item_amount = 0 setget set_item_amount, get_item_amount
 var item_price = 0.0 setget set_item_price
+
+enum ItemCategory{FOOD,DRINK,MISC}
+
+export(ItemCategory) var Category = ItemCategory.FOOD setget set_item_category, get_item_category
 
 onready var Name = $HBox/Name
 onready var Price = $HBox/Price
@@ -42,6 +46,13 @@ func set_item_name(new_item_name):
 	if Name:
 		Name.text = item_name
 
+func set_item_category(new_item_category) -> bool:
+	for each in ItemCategory.values():
+		if new_item_category == each:
+			Category = new_item_category
+			return true
+	return false
+
 func set_item_amount(new_item_amount):
 	if new_item_amount < 0:
 		return
@@ -56,10 +67,18 @@ func set_item_price(new_item_price):
 	if Price:
 		Price.text = float_to_currency(item_price)
 
+func get_item_name():
+	return item_name
+
+func get_item_category():
+	print(Category)
+	return Category
+
+func get_item_amount():
+	return item_amount
 
 func _on_item_amount_appended(change):
 	self.item_amount += change
-
 
 func float_to_currency(flt) -> String:
 	var sections = str(stepify(flt,0.01)).split(".")

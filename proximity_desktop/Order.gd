@@ -18,10 +18,12 @@ func _ready():
 func initialize(input_table, input_order):
 	table = input_table
 	$table.text = table
-	order = input_order
+	print(input_order)
+	for item in input_order.keys():
+		order += "\n" + item + "\t x" + String(input_order[item]["Amount"])
 	$order_contents.text = order
-	var item_timestamp = OS.get_time()
-	$timestamp.text = String(item_timestamp["hour"]) + ":" + String(item_timestamp["minute"])
+	var order_timestamp = OS.get_time()
+	$timestamp.text = String(order_timestamp["hour"]) + ":" + String(order_timestamp["minute"])
 	status = ORDER_STATUS.RECEIVED
 
 func set_order_status(value):

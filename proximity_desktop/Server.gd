@@ -10,9 +10,11 @@ func _ready():
 	get_tree().multiplayer.connect("network_peer_packet",self,"_on_packet_received")
 
 func _on_packet_received(id,packet):
-	var content = packet.get_string_from_ascii()
-	$Label.text = $Label.text + "\n" + content
-	get_parent().incoming_order(content.split("#")[0], content.split("#")[1])
+	var data = packet.get_string_from_utf8()
+	$Label.text = $Label.text + "\n" + data
+	var jsonParseResult: JSONParseResult = JSON.parse(data)
+	var order = jsonParseResult.result
+	get_parent().incoming_order(order)
 
 func _peer_connected(id):
 	$Label.text = $Label.text + "\nUser " + str(id) + " connected"
@@ -25,4 +27,4 @@ func _peer_disconnected(id):
 func _on_buttonSendData_pressed():
 	print("Sending data to client")
 	var textToSend = get_parent().get_node("textToSend").text
-	get_tree().multiplayer.send_bytes(textToSend.to_ascii())
+	get_tree().multiplayer.send_bytes(textToSend.to_utf8())
