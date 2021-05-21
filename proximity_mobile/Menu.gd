@@ -1,8 +1,10 @@
 extends Control
 
 var load_client = preload("res://Client.tscn")
+var load_item = preload("res://Item.tscn")
 
 var client
+var menu
 
 onready var Items = $Main/ScrollContainer/Items
 
@@ -13,6 +15,15 @@ func _ready():
 func initialize_client():
 	client = load_client.instance()
 	add_child(client)
+
+func initialize_menu(data):
+	var menu_json = JSON.parse(data)
+	menu = menu_json.result
+	for category in menu.keys():
+		for entry in menu[category].keys():
+			var item = load_item.instance()
+			item.initialize(category, entry, menu[category][entry]["Price"])
+			Items.add_child(item)
 
 func _on_ButtonCheckout_pressed():
 	var order = compile_order()

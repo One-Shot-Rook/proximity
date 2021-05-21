@@ -12,8 +12,10 @@ func _on_connection_failed(error):
 	print(text)
 
 func _on_packet_received(id,packet):
-	var text = packet.get_string_from_ascii()
-	print(text)
+	var data = packet.get_string_from_utf8()
+	if data.begins_with("MENU:"):
+		data = data.trim_prefix("MENU:")
+		get_parent().initialize_menu(data)
 
 func send_order(order):
 	var json_data = JSON.print(order)

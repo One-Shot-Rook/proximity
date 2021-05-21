@@ -73,17 +73,16 @@ __meta__ = {
 }
 
 [node name="Item" parent="Main/ScrollContainer/Items" instance=ExtResource( 1 )]
+visible = false
 Category = 1
 item_name = "Coke"
 
 [node name="Item2" parent="Main/ScrollContainer/Items" instance=ExtResource( 1 )]
-margin_top = 204.0
-margin_bottom = 404.0
+visible = false
 item_name = "Steak"
 
 [node name="Item3" parent="Main/ScrollContainer/Items" instance=ExtResource( 1 )]
-margin_top = 408.0
-margin_bottom = 608.0
+visible = false
 Category = 2
 item_name = "Crisps"
 

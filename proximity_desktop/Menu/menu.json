@@ -1,0 +1,221 @@
+{
+  "Food": {
+    "Street Style Duck Taco": {
+      "Course": "Starter",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 6
+    },
+    "Smoked Salmon and Prawn Scotch Egg": {
+      "Course": "Starter",
+      "Description": null,
+      "Options": null,
+      "Price": 8
+    },
+    "Local Asparagus Salad": {
+      "Course": "Starter",
+      "Description": null,
+      "Options": "V VGO GFO",
+      "Price": 6.5
+    },
+    "Beef Short Rib Wellington": {
+      "Course": "Main",
+      "Description": null,
+      "Options": null,
+      "Price": 12
+    },
+    "Sustainable Cod and Chips": {
+      "Course": "Main",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 12
+    },
+    "Market Fish of the Day": {
+      "Course": "Main",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 13
+    },
+    "Park Hall Farm Vegetable Tarte Tatin": {
+      "Course": "Main",
+      "Description": null,
+      "Options": "V VGO",
+      "Price": 11
+    },
+    "10oz Dry Aged Ribeye Steak": {
+      "Course": "Main",
+      "Description": null,
+      "Options": "GF",
+      "Price": 21
+    },
+    "Homemade Steak Burger with Bacon": {
+      "Course": "Burger",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 12
+    },
+    "Focaccia Crumbed Chicken Burger with Bacon": {
+      "Course": "Burger",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 12
+    },
+    "Beetroot, Celeraic, Courgette & Carrot Rosti Burger": {
+      "Course": "Burger",
+      "Description": null,
+      "Options": "V VG GFO",
+      "Price": 11
+    },
+    "Sml Chicken Caesar": {
+      "Course": "Salad",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 6
+    },
+    "Lge Chicken Caesar": {
+      "Course": "Salad",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 12
+    },
+    "Sml Caprese Salad": {
+      "Course": "Salad",
+      "Description": null,
+      "Options": "V GFO",
+      "Price": 6
+    },
+    "Lge Caprese Salad": {
+      "Course": "Salad",
+      "Description": null,
+      "Options": "V GFO",
+      "Price": 12
+    },
+    "Custom Pizza": {
+      "Course": "Pizza",
+      "Description": null,
+      "Options": "GFO VGO",
+      "Price": 12
+    },
+    "Slow Cooked lamb Ragout": {
+      "Course": "Pasta",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 12
+    },
+    "Fettucine Alfredo": {
+      "Course": "Pasta",
+      "Description": null,
+      "Options": "V GFO",
+      "Price": 12
+    },
+    "Langoustine Farfelle": {
+      "Course": "Pasta",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 15
+    },
+    "Homemade Pizza": {
+      "Course": "Kids",
+      "Description": null,
+      "Options": null,
+      "Price": 5
+    },
+    "Cod Goujons": {
+      "Course": "Kids",
+      "Description": null,
+      "Options": null,
+      "Price": 5
+    },
+    "Chicken Lollipops": {
+      "Course": "Kids",
+      "Description": null,
+      "Options": null,
+      "Price": 5
+    },
+    "Local Sausages": {
+      "Course": "Kids",
+      "Description": null,
+      "Options": null,
+      "Price": 5
+    },
+    "Triple Cooked Chips": {
+      "Course": "Sides",
+      "Description": null,
+      "Options": null,
+      "Price": 2.5
+    },
+    "Garlic Focaccia": {
+      "Course": "Sides",
+      "Description": null,
+      "Options": null,
+      "Price": 2.5
+    },
+    "Tavern Side Salad": {
+      "Course": "Sides",
+      "Description": null,
+      "Options": null,
+      "Price": 2.5
+    },
+    "Beer Battered Onion Rings": {
+      "Course": "Sides",
+      "Description": null,
+      "Options": null,
+      "Price": 5
+    },
+    "Rhubarb Cheesecake": {
+      "Course": "Deserts",
+      "Description": null,
+      "Options": "GF VF",
+      "Price": 5
+    },
+    "Almond Milk & Lime Pannacotta": {
+      "Course": "Deserts",
+      "Description": null,
+      "Options": "GFO",
+      "Price": 7.5
+    },
+    "British & Continental Artisan Cheese Selection": {
+      "Course": "Deserts",
+      "Description": null,
+      "Options": null,
+      "Price": null
+    }
+  },
+  "Drinks": {
+    "Sml Coke": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 1.85
+    },
+    "Sml Diet Coke": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 1.85
+    },
+    "Sml Lemonade": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 1.85
+    },
+    "Lge Coke": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 3.65
+    },
+    "Lge Diet Coke": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 3.65
+    },
+    "Lge Lemonade": {
+      "Description": null,
+      "Options": "Ice/Lemon",
+      "Price": 3.65
+    },
+    "Wye Valley HPA": {
+      "Description": null,
+      "Options": null,
+      "Price": 3.6
+    }
+  }
+}

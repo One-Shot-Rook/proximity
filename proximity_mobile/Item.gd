@@ -41,6 +41,18 @@ func _get_property_list() -> Array:
 		},
 	]
 
+func initialize(input_category, input_name, input_price):
+	match input_category:
+		"Drinks":
+			set_item_category(ItemCategory.DRINK)
+		"Food":
+			set_item_category(ItemCategory.FOOD)
+		_:
+			queue_free()
+			return
+	set_item_name(input_name)
+	set_item_price(input_price)
+
 func set_item_name(new_item_name):
 	item_name = new_item_name
 	if Name:

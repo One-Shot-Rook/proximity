@@ -19,12 +19,14 @@ func _on_packet_received(id,packet):
 func _peer_connected(id):
 	$Label.text = $Label.text + "\nUser " + str(id) + " connected"
 	get_node("labelUserCount").text = "Total Users:" + str(get_tree().get_network_connected_peers().size())
+	send_menu_data()
   
 func _peer_disconnected(id):
 	$Label.text = $Label.text + "\nUser " + str(id) + " disconnected"
 	get_node("labelUserCount").text = "Total Users:" + str(get_tree().get_network_connected_peers().size())
 
-func _on_buttonSendData_pressed():
+func send_menu_data():
 	print("Sending data to client")
-	var textToSend = get_parent().get_node("textToSend").text
-	get_tree().multiplayer.send_bytes(textToSend.to_utf8())
+	var menu = JSON.print(Menu.get_menu())
+	menu = "MENU:" + menu
+	get_tree().multiplayer.send_bytes(menu.to_utf8())

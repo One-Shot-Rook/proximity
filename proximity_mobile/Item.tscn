@@ -52,9 +52,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 custom_fonts/font = ExtResource( 2 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Coke"
 align = 1
 valign = 1
+clip_text = true
 
 [node name="VSeparator" type="VSeparator" parent="HBox"]
 margin_left = 349.0
