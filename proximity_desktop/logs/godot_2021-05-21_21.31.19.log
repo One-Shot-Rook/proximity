@@ -1,0 +1,10 @@
+Godot Engine v3.3.1.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: AMD Radeon RX 5700 XT
+OpenGL ES Batching: ON
+**WARNING**: WASAPI: Unsupported number of channels: 1
+   At: drivers/wasapi/audio_driver_wasapi.cpp:330:init_render_device() - WASAPI: Unsupported number of channels: 1
+ 
+**ERROR**: Can't use get_node() with absolute paths from outside the active scene tree.
+   At: scene/main/node.cpp:1306:get_node_or_null() - Condition "!data.inside_tree && p_path.is_absolute()" is true. Returned: __null
+**ERROR**: Can't use get_node() with absolute paths from outside the active scene tree.
+   At: scene/main/node.cpp:1306:get_node_or_null() - Condition "!data.inside_tree && p_path.is_absolute()" is true. Returned: __null

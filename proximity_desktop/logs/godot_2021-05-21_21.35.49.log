@@ -1,0 +1,7 @@
+Godot Engine v3.3.1.stable.official - https://godotengine.org
+OpenGL ES 3.0 Renderer: AMD Radeon RX 5700 XT
+OpenGL ES Batching: ON
+**WARNING**: WASAPI: Unsupported number of channels: 1
+   At: drivers/wasapi/audio_driver_wasapi.cpp:330:init_render_device() - WASAPI: Unsupported number of channels: 1
+ 
+Sending data to client
