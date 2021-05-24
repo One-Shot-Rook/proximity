@@ -93,6 +93,8 @@ func _on_item_amount_appended(change):
 	self.item_amount += change
 
 func float_to_currency(flt) -> String:
+	if flt == null:
+		return "£ 0"
 	var sections = str(stepify(flt,0.01)).split(".")
 	var cur = ""
 	if sections.size() == 1:
